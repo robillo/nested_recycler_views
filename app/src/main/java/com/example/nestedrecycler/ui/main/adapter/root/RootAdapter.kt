@@ -6,8 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nestedrecycler.R
 import com.example.nestedrecycler.model.RootNode
 import com.example.nestedrecycler.ui.main.adapter.root.view_holder.RootViewHolder
+import com.squareup.picasso.Picasso
 
-class RootAdapter(private val rootItemList: List<RootNode>):
+class RootAdapter(
+    private val rootItemList: List<RootNode>,
+    private val picasso: Picasso
+):
     RecyclerView.Adapter<RootViewHolder>(), RootViewHolder.RootItemClickListener {
 
     private lateinit var rootItemClickListener: RootItemClickListener
@@ -24,7 +28,7 @@ class RootAdapter(private val rootItemList: List<RootNode>):
     }
 
     override fun onBindViewHolder(holder: RootViewHolder, position: Int) {
-        holder.setItem(rootItemList[position])
+        holder.setItem(rootItemList[position], picasso)
         holder.setRootItemClickListener(this)
     }
 
