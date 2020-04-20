@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Nested Recycler</string>
+    <string name="view_all">VIEW ALL</string>
+</resources>
